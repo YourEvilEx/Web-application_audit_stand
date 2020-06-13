@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fuckmillennials</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="/">Home</a></li>
+            <li role="presentation"><a href="">Login</a></li>
+            <li role="presentation"><a href="reg">Register</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="jumbotron">
+        <h1>Login</h1>
+          <form class="form-login" action="" method="POST">
+            <input type="name" name="name" id="name" class="form-control" placeholder="Name" required autofocus>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+            <button id="btn_login" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+          </form>
+      </div> 
+    </div>
+    <footer class="footer">
+      <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+  </body>
+</html>

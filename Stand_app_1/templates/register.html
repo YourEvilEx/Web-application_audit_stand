@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fuckmillennials</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="/">Home</a></li>
+            <li role="presentation"><a href="log">Login</a></li>
+            <li role="presentation"><a href="">Register</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="jumbotron">
+        <h1>Register</h1>
+         <form class="form-register" action="" method="POST">
+    		  <input type="name" id="name" name="name" class="form-control top" placeholder="Login">
+    		  <input type="email" id="email" name="email" class="form-control top" placeholder="Email" required>
+    		  <input type="password" id="password" name="password" class="form-control top" placeholder="Password" required>
+    		  <button id="btn_register" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+  		  </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Fuckmillennials</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+   
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li><a href="#">Home</a></li>
+                    {% if session.username  %}
+                    <li><a href="{{ url_for('profile', username=session.username) }}">Profile</a></li>
+                    <li><a href="logout">Logout</a></li>
+                    {% else %}
+                    <li><a href="log">Login</a></li>
+                    <li><a href="reg">Register</a></li>
+                    {% endif %}
+                    
+                </ul>
+            </nav>
+        </div>
+        {% if session.username %}
+        {% if data %}
+        <div class="status">
+            <h1 class="text-muted">Последние новости</h1>
+            {% for status in data %}
+            <ol class="border">
+                {% if status[2] == 0 %}
+                    <li>
+                        <p>Текст: {{status[0]}}</p>
+                        <p>Автор: {{status[1]}}</p>
+                    </li>
+                {%else%}
+                    <li>
+                        <p>Текст: {{status[0]}}</p>
+                        <p>Автор: ANONIM</p>
+                    </li>
+                {% endif %}
+            </ol>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endif %}
+        {% if session.username %}
+        <div class="div-status">
+            <form class="form-status" action="" method="POST">
+                <p>Расскажите свою новость, анонимность будет гарантирована<Br>
+                <textarea name="text_status" cols="40" rows="3"></textarea></p>
+                <p>
+                    <button id="btn_status" type="submit">Отправить</button>
+                    <input type="checkbox" name="privat" value="1">Приватное</p>
+                </p>
+            </form>
+        </div>
+        {% endif %}
+        <div class="row marketing">
+            <div class="col-lg-6">
+               
+            </div>
+        </div>
+ 
+        
+ 
+    </div>
+    <footer class="footer">
+            <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+</body>
+</html>

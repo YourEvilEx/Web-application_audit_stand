@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Fuckmillennials</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Home</a></li>
+            {%if 'admin' in session.username %}
+            <li><a href="/user_list">User list</a></li>
+            {%endif%}
+          </ul>
+            </nav>
+              <h1 class="text-muted">Профиль</h1>
+            <div>
+              <h3>Name: {{ username }}</h3>
+              <h3>Email: {{ data[0] }}</h3>
+            </div>
+            {% if info %}
+              <div>
+                <h3>Личные данные</h3>
+                <ol class="border">
+                  <li>City: {{info[0][0]}}</li>
+                  <li>Number: {{info[0][1]}}</li>
+                  <li>Year: {{info[0][2]}}</li>
+                  {% if username == session.username %}
+                  <li>Secret: {{info[0][3]}}</li>
+                  {% endif %}
+                </ol>
+              </div>
+            {% endif %}
+            <div class="jumbotron">
+              <h1>Напишите что-нибудь о себе</h1>
+              <form id='form-profile' class="form-profile" action="" method="POST">
+                <input type="city" id="city" name="city" class="form-control top" placeholder="City" required autofocus>
+                <input type="telefon_number" id="telefon_number" name="telefon_number" class="form-control bottom" placeholder="Telefon number" required>
+                <input type="year_of_birth" id="year_of_birth" name="year_of_birth" class="form-control bottom" placeholder="Year of birth" required>
+                <input type="secret" id="secret" name="secret" class="form-control bottom" placeholder="Secret" required>
+                <button id="btn_profile" name='btn_profile' class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+              </form>
+            </div>
+            <div class='file'>
+              <form id='form-file' class="form-file" method="post" enctype=multipart/form-data>
+               <p>Импортировать профиль из файла</p>
+               <p><input type="file" name="yaml">
+               <button id="btn_file" name='btn_file' class="btn btn-lg btn-primary btn-block" type="submit">Отправить</button>
+              </form>
+            </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+  </body>
+</html>

