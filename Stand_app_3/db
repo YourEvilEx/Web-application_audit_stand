@@ -1,0 +1,17 @@
+CREATE DATABASE Dyranki;
+ALTER TABLE posts CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE `Dyranki`.`users` (
+  `id` BIGINT AUTO_INCREMENT,
+  `login` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `Dyranki`.`posts` (
+  `id` BIGINT AUTO_INCREMENT,
+  `username` VARCHAR(45) NULL,
+  `title` VARCHAR(200) NULL,
+  `time` VARCHAR(45) NULL,
+  `info` VARCHAR(200) NULL,
+  `pic_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));

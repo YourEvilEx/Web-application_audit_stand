@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Dyranki</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"> 
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Home</a></li> 
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/add_post">Add Post</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    {% if post %}
+	<img width="150" height="150" src="/static/posts/{{post[5]}}" >
+        <div class="posts">
+          [{{post[1]}}] хочет прочитать {{post[2]}} уже {{post[3]}}<br>
+          Подробнее: {{post[4]}}
+          
+        </div>
+    {% endif %}
+    <footer class="footer">
+      <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+</body>
+</html>

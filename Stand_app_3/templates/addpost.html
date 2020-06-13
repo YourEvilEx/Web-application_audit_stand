@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title></title>
+      <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="profile">Profile</a></li>
+            <li><a href="logout">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+      <h1 class="text-muted">Добавить произведение</h1>
+
+      <div class="text">
+            <form class="form-status" enctype="multipart/form-data" action="" method="POST">
+                <p>Название произведения</p>
+                  <textarea name="name_title" cols="40" rows="2"  placeholder="Война и мир"></textarea>
+                <p>Краткое описание произведения </p>
+                  <textarea name="info" cols="60" rows="15"  placeholder="Роман-эпопея Льва Николаевича Толстого, описывающий русское общество в эпоху войн против Наполеона в 1805 — 1812 годах. Эпилог романа доводит повествование до 1820 года." ></textarea>
+                <p>В течение какого времени собираетесь прочитать</p>
+                  <textarea name="time" cols="40" rows="1"  placeholder="До конца года" ></textarea>
+                <p>Добавте изображение тайтла</p>
+                  <input type="file" name="pictures">
+                  <br> <br> <br> <br>
+                <button name="action" value ="btn_post" type="submit">Сохранить</button>
+            </form>
+        </div>
+    <footer class="footer">
+      <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+  </body>
+</html>

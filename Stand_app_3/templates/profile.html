@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title></title>
+      <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+       <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Home</a></li>
+            {% if not data %}
+              <li><a href="login">Login</a></li>
+              <li><a href="register">Register</a></li>
+            {% else %}
+              <li><a href="profile">Profile</a></li>
+              <li><a href="logout">Logout</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      <h1 class="text-muted">Профиль</h1>
+      <div>
+        <h3>Имя: {{ username }}</h3>
+      </div>
+      <div align='left'>
+        {% if pictures %}
+        <img width="255" height="255" src="/static/{{username}}/{{pictures[0]}}" >
+        {% else %}
+        <img width="255" height="255" src="static/1.png">
+        {% endif %}
+      </div>
+      <div>
+        <form enctype="multipart/form-data" method="POST">
+         <p>
+          <input type="file" name="file">
+          <button type="submit" name="action" value='file_upload'>Загрузить</button>
+         </p>
+        </form> 
+      </div>
+      {% if data %}
+      <h3>Ваша биография</h3>
+      <div class="bio">
+        <h3>{{data}}</h3>
+      </div>
+      {% endif %}
+      {% if username %}
+        <div class="text">
+            <br>
+            <form class="form-status" action="" method="POST">
+                <p>
+                  <h3>Расскажите о себе</h3>
+                  <textarea name="text" cols="40" rows="3"  placeholder="Bio" ></textarea>
+                </p>
+                <button name="action" value ="btn_text" type="submit">Сохранить</button>
+                </p>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+    <footer class="footer">
+      <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+  </body>
+</html>

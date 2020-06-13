@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Dyranki</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css"> 
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Home</a></li>
+            {% if not admin %}
+              <li><a href="login">Login</a></li>
+              <li><a href="register">Register</a></li>
+            {% else %}
+              <li><a href="profile">Profile</a></li>
+              <li><a href="logout">Logout</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div>
+      <p>username is Admin</p>
+    </div>
+    <footer class="footer">
+            <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+</body>
+</html>

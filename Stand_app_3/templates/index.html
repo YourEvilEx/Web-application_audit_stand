@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Dyranki</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css"> 
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Home</a></li>
+            {% if not data %}
+              <li><a href="login">Login</a></li>
+              <li><a href="register">Register</a></li>
+            {% else %}
+              <li><a href="profile">Profile</a></li>
+              <li><a href="add_post">Add Post</a></li>
+              <li><a href="logout">Logout</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+    {% if post %}
+      {% for p in post %}
+        <div class='posts'>
+          [{{p[1]}}] хочет прочитать "{{p[2]}}" уже {{p[3]}}.
+          <img width="150" height="150" src="/static/posts/{{p[5]}}">
+          <li ><a href="post/{{p[0]}}">Подробнее</a></li>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+<!--    {% if username %}
+      <div class="text">
+          <br>
+          <form class="form-status" action="" method="POST">
+              <p>Биография</p>
+              <button name="action" value ="btn_addpost" type="submit">Ждать вместе</button>
+          </form>
+      </div>
+    {% endif %}-->
+    <footer class="footer">
+      <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+</body>
+</html>
