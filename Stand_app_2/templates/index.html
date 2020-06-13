@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Doki Doki Literature Club!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+   
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Market</a></li>
+            {% if session.username  %}
+                <li><a href="users">User list</a></li>
+                <li><a href="profile">Profile</a></li>
+                <li><a href="logout">Logout</a></li>
+            {% else %}
+              <li><a href="login">Login</a></li>
+              <li><a href="register">Register</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+        
+        <div class="search">
+            <h3>Поиск автора</h3>
+            <form class="class-search" action="" method="POST">
+                <textarea name="text" cols="15" rows="1"></textarea>
+                <button name="action" value="search" type="submit">Поиск</button>
+                </p>
+            </form>
+        </div>
+        {% if data %}
+            
+            {%for post in data%}
+            <div class="post">
+                <p>Автор: {{post[1]}}</p>
+                <p>Цена: {{post[2]}}</p>
+                <form name="form-posts"  action="" method="POST">
+                <button id="" name="action" value="posts_{{post[0]}}" type="submit">Купить</button>
+                </form>
+                <br>
+            </div>
+            {%endfor%}
+            
+        {%endif%}
+
+        {% if session.username %}
+        <div class="text">
+            <br>
+            <form class="form-status" action="" method="POST">
+                <p>Напишите свой рассказ и продайте его!<Br>
+                    <textarea name="text" cols="40" rows="3"></textarea>
+                </p>
+                <p><input type="price" name="price" id="price" class="form-control" placeholder="Price" required></p>
+                <p>
+                <button name="action" value ="btn_edit_end" type="submit">Отправить</button>
+                </p>
+            </form>
+        </div>
+        {% endif %} 
+ 
+        
+ 
+    </div>
+    <footer class="footer">
+            <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+</body>
+</html>

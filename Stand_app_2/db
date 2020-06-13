@@ -1,0 +1,15 @@
+CREATE DATABASE BadEnd;
+
+CREATE TABLE `BadEnd`.`users` (
+  `id` BIGINT AUTO_INCREMENT,
+  `login` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `balance` INT( 11 ) NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `BadEnd`.`posts` (
+  `id` BIGINT AUTO_INCREMENT,
+  `author` VARCHAR(45) NULL,
+  `text` VARCHAR(500) NULL,
+  `price` VARCHAR(50) NULL,
+  PRIMARY KEY (`id`));

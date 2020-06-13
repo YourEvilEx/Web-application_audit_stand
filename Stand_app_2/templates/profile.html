@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Doki Doki Literature Club!</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Market</a></li>
+            {% if session.username  %}
+                <li><a href="users">User list</a></li>
+                <li><a href="profile">Profile</a></li>
+                <li><a href="logout">Logout</a></li>
+            {% else %}
+              <li><a href="login">Login</a></li>
+              <li><a href="register">Register</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      <h1 class="text-muted">Профиль</h1>
+      <div>
+        <h3>Имя: {{ username }}</h3>
+        <h3>Баланс: {{ balance[0] }}</h3>
+      </div>
+      {% if posts %}
+      <div>
+          <h3>Мои покупки</h3>
+          {% for post in posts %}
+          <ol class="border">
+            <li>Текст: {{post[0]}}<br>
+                Цена: {{post[1]}}</li>
+          </ol>
+        </div>
+      {% endfor %}  
+      {% endif %}
+      
+    </div>
+    <footer class="footer">
+      <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Doki Doki Literature Club!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Market</a></li>
+            {% if session.username  %}
+                <li><a href="users">User list</a></li>
+                <li><a href="profile">Profile</a></li>
+                <li><a href="logout">Logout</a></li>
+            {% else %}
+              <li><a href="login">Login</a></li>
+              <li><a href="register">Register</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      <div class="jumbotron">
+        <h1>Регистрация</h1>
+         <form class="form-register" action="" method="POST">
+    		  <input type="username" id="username" name="username" class="form-control top" placeholder="Username" required autofocus>
+    		  <input type="password" id="password" name="password" class="form-control bottom" placeholder="Password" required>
+    		  <button id="btn_register" class="btn btn-lg btn-primary btn-block" type="submit">Регистрация</button>
+  		  </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>&copy;PATRIARCH_DMITRY</p>
+    </footer>
+  </body>
+</html>
